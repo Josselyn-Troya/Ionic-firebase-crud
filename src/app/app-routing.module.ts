@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'make-appointment',
+    loadChildren: () => import('./make-appointment/make-appointment.module').then( m => m.MakeAppointmentPageModule)
+  },
+  {
+    path: 'edit-appointment/:id',
+    loadChildren: () => import('./edit-appointment/edit-appointment.module').then( m => m.EditAppointmentPageModule)
+  },
 ];
 
 @NgModule({
@@ -19,4 +27,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
